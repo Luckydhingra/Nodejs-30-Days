@@ -17,9 +17,7 @@ const userSchema = new mongoose.Schema({
     email: String,
     age: Number
 });
-
 const User = mongoose.model('User', userSchema);
-
 /**
  * Express route to get all users from MongoDB
  * @param {Object} req - Express request object
@@ -35,9 +33,7 @@ function getAllUsers(req, res) {
             res.status(500).json({ error: err.message });
         });
 }
-
 app.get('/users', getAllUsers);
-
 // Start Express Server
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
